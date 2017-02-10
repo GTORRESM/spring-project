@@ -1,10 +1,72 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.accenture.spring</groupId>
-    <artifactId>spring-project</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>com.accenture.spring.data</groupId>
-  <artifactId>spring-data</artifactId>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.accenture.spring</groupId>
+		<artifactId>spring-project</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.accenture.spring.data</groupId>
+	<artifactId>spring-data</artifactId>
+
+	<properties>
+		<mysql_connector_version>5.1.39</mysql_connector_version>
+		<hibernate_entity_manager_version>5.2.6.Final</hibernate_entity_manager_version>
+		<spring_data_jpa_version>2.0.0.M1</spring_data_jpa_version>
+		<bonecp_version>0.8.0.RELEASE</bonecp_version>
+		<spring_version>4.3.6.RELEASE</spring_version>
+		<junit_version>4.12</junit_version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.accenture.spring.model</groupId>
+			<artifactId>spring-model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Driver de Base de Datos -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql_connector_version}</version>
+		</dependency>
+
+		<!-- Hibernate y conexion de la DB -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate_entity_manager_version}</version>
+		</dependency>
+
+		<!-- Spring Data JPA -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring_data_jpa_version}</version>
+		</dependency>
+
+		<!-- Librería para el pool de conexiones -->
+		<dependency>
+			<groupId>com.jolbox</groupId>
+			<artifactId>bonecp</artifactId>
+			<version>${bonecp_version}</version>
+		</dependency>
+
+		<!-- Spring Test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring_version}</version>
+		</dependency>
+
+		<!-- JUnit Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit_version}</version>
+		</dependency>
+
+	</dependencies>
+
 </project>
