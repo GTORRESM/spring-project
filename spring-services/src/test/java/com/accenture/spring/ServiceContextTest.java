@@ -1,5 +1,7 @@
 package com.accenture.spring;
 
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -12,5 +14,10 @@ import com.accenture.spring.service.BookService;
 public class ServiceContextTest {
 	@Autowired
 	protected BookService bookService;
+	
+	@Test
+	public void instanceTest() {
+		Assert.assertNotNull(bookService);
+	}
 
 }

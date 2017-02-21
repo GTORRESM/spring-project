@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{templates/templateInitial}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="#{book.title.page}"></title>
+</head>
+<body>
+
+	<div layout:fragment="custom-content-wrapper">
+		<h1 th:text="#{book.title.page}"></h1>
+
+		<table class="table table-bordered table-hover">
+			<tr>
+				<th th:text="#{book.table.code}"></th>
+				<th th:text="#{book.table.name}"></th>
+				<th th:text="#{book.table.publication}"></th>
+				<th th:text="#{book.table.action}"></th>
+			</tr>
+			<tbody th:remove="all-but-first">
+				<tr th:each="book : ${bookList}">
+					<td th:text="${book.isbn}"></td>
+					<td th:text="${book.title}"></td>
+					<td th:text="${book.dateOfPublication}"></td>
+					<td>
+						<a class="btn btn-default"
+						th:href="@{findBook(id=${book.isbn})}" role="button"
+						th:text="#{book.table.edit}"></a> 
+						<a class="btn btn-default"
+						th:href="@{removeBook(id=${book.isbn})}" role="button"
+						th:text="#{book.table.remove}"></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a class="btn btn-default"
+						th:href="@{findBook(id=)}" role="button"
+						th:text="#{book.table.newBook}"></a>
+	</div>
+</body>
+</html>

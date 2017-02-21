@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Latest compiled and minified CSS -->
+
+<link th:href="@{/static/css/app.css}" rel="stylesheet" />
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css"
+	th:href="@{/webjars/jquery-ui-themes/1.11.4/south-street/jquery-ui.min.css}"
+	rel="stylesheet" />
+<link
+	href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css"
+	th:href="@{/webjars/startbootstrap-simple-sidebar/1.0.5/css/simple-sidebar.css}"
+	rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<div layout:fragment="custom-content"></div>
+		<div id="wrapper">
+
+			<!-- Sidebar -->
+			<div id="sidebar-wrapper">
+				<ul class="sidebar-nav">
+					<li class="sidebar-brand"><a th:href="@{/}"> Start </a></li>
+					<li><a th:href="@{/bookController/bookList}">Books</a></li>
+				</ul>
+			</div>
+			<!-- /#sidebar-wrapper -->
+
+			<!-- Page Content -->
+			<div id="page-content-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div layout:fragment="custom-content-wrapper">
+							
+							</div>
+							<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /#page-content-wrapper -->
+		</div>
+
+		<footer>
+			<!--  <p layout:fragment="custom-footer">footer Template
+			<p>
+				&copy; <label th:text="#{msg.loging.footer.company}"></label> 2017  -->
+			<div layout:fragment="javascript-fragment">
+				<script type="text/javascript" th:inline="javascript"
+					src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+					th:src="@{/webjars/jquery/2.2.4/dist/jquery.min.js}"></script>
+				<script type="text/javascript" th:inline="javascript"
+					src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"
+					th:src="@{/webjars/jquery-ui/1.11.4/jquery-ui.min.js}"></script>
+				<script type="text/javascript" th:inline="javascript"
+					src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+					th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js	}"></script>
+
+				<script type="text/javascript" th:inline="javascript"
+					src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"
+					th:src="@{/webjars/moment/2.14.1/min/moment.min.js}"></script>
+
+				<script type="text/javascript" th:inline="javascript"
+					src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+					th:src="@{/webjars/toastr/2.1.2/build/toastr.min.js}"></script>
+
+				<script type="text/javascript" th:inline="javascript">
+					$("#menu-toggle").click(function(e) {
+						e.preventDefault();
+						$("#wrapper").toggleClass("toggled");
+					});
+				</script>
+
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

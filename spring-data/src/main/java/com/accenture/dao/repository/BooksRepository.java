@@ -8,8 +8,10 @@ import com.accenture.spring.model.Book;
 
 public interface BooksRepository extends JpaRepository<Book, String> {
 
-	public List<Book> findByTitleLike(String nombre); 
+	List<Book> findByTitleLike(String nombre); 
 	
-	public List<Book> findByTitle(String title);
+	List<Book> findByTitle(String title);
+	
+	Book findByIsbn(String isbn);
 
 }

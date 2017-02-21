@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{templates/templateInitial}"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta name="viewport"
+	content="width=device-width, shrink-to-fit=no, initial-scale=1">
+
+<title th:text="#{msg.welcome.title}"></title>
+
+</head>
+
+<body>
+
+	<div layout:fragment="custom-content-wrapper">
+		<h1 th:text="#{msg.welcome.title}"></h1>
+		<p th:text="#{msg.welcome.page}"/>
+	</div>
+</body>
+</html>
